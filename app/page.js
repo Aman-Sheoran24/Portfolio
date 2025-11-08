@@ -80,7 +80,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex justify-center">
-          <img src="/profile-image.jpg" alt="Aman Sheoran" className="rounded-2xl object-cover w-full max-w-md" />
+          <img src="/profile_image.png" alt="Aman Sheoran" className="rounded-2xl object-cover w-full max-w-md" />
         </div>
       </section>
 
@@ -94,9 +94,9 @@ export default function HomePage() {
           <div className="inline-flex gap-6">
             {[...Array(2)].flatMap(() => ([
               <img key={1} src="/photo1.jpg" alt="Aman 1" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />, 
-              <img key={2} src="/photo2.jpg" alt="Aman 2" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />, 
-              <img key={3} src="/photo3.jpg" alt="Aman 3" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />, 
-              <img key={4} src="/photo4.jpg" alt="Aman 4" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />
+              <img key={2} src="/photo2.png" alt="Aman 2" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />, 
+              <img key={3} src="/photo3.png" alt="Aman 3" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />, 
+              <img key={4} src="/photo4.png" alt="Aman 4" className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300" />
             ]))}
           </div>
         </div>
