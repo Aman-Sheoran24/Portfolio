@@ -23,31 +23,30 @@
     </p>
   </div>
 
-  {/* 🔹 Clean, stable image carousel */}
+  {/* Cleaned-up image carousel */}
   <div
     ref={aboutImageRef}
-    className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-none"
+    className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-none select-none"
   >
     <div className="inline-flex gap-6">
-      {[
-        { src: "/photo1.png", alt: "Aman 1" },
-        { src: "/photo2.png", alt: "Aman 2" },
-        { src: "/photo3.png", alt: "Aman 3" },
-        { src: "/photo4.png", alt: "Aman 4" },
-        // repeated once more for smooth looping
-        { src: "/photo1.png", alt: "Aman 1" },
-        { src: "/photo2.png", alt: "Aman 2" },
-        { src: "/photo3.png", alt: "Aman 3" },
-        { src: "/photo4.png", alt: "Aman 4" },
-      ].map((img, index) => (
-        <img
-          key={index}
-          src={img.src}
-          alt={img.alt}
-          onError={(e) => (e.target.style.display = "none")} // hide broken images
-          className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300"
-        />
-      ))}
+      {Array.from({ length: 2 }).map((_, repeatIndex) =>
+        [
+          { src: "/photo1.png", alt: "Drone Meeting" },
+          { src: "/photo2.png", alt: "Drone Workshop" },
+          { src: "/photo3.png", alt: "Drone Team" },
+          { src: "/photo4.png", alt: "Drone Design" },
+        ].map((img, i) => (
+          <img
+            key={`${repeatIndex}-${i}`}
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            draggable="false"
+            className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300"
+            onError={(e) => (e.currentTarget.style.display = "none")}
+          />
+        ))
+      )}
     </div>
   </div>
 </section>
