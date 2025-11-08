@@ -8,7 +8,6 @@ export default function HomePage() {
   const aboutImageRef = useRef(null);
   const [activeSection, setActiveSection] = useState("hero");
 
-  // Smooth auto-scroll for About section
   useEffect(() => {
     const interval = setInterval(() => {
       if (aboutImageRef.current) {
@@ -24,7 +23,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Smooth auto-scroll for Projects section
   useEffect(() => {
     const interval = setInterval(() => {
       if (projectsRef.current) {
@@ -40,7 +38,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Active navigation section tracking
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["hero", "about", "projects"];
@@ -62,36 +59,44 @@ export default function HomePage() {
 
   const projects = [
     {
-      title: "Thermal SLAM Drone",
-      org: "IITD Research",
-      year: "2024",
+      title: "NIDAR – UAV for Disaster Relief",
+      org: "IIT Delhi Research",
+      year: "2025",
       description:
-        "Designed algorithms to handle motor failure and lighting variation for autonomous navigation.",
-      tech: "Python, ROS, PyTorch, OpenCV, C++",
+        "Developed UAVs for post-disaster search and rescue with LoRa mesh communication, real-time YOLOv7 + DeepLabV3 vision on Jetson platform. Achieved over 60% efficiency gain in field tests.",
+      tech: "Jetson, ROS, YOLOv7, DeepLabv3+, LoRa, MAVLink",
     },
     {
-      title: "Fail-Safe Quadcopter",
-      org: "ideaForge",
-      year: "2024",
+      title: "Dead Reckoning for GPS-Denied Drones",
+      org: "BotLab Dynamics",
+      year: "2025",
       description:
-        "Built automated GPS-based recovery system and stabilized quadcopters under failure conditions.",
-      tech: "ROS2, PX4, UAV Hardware",
+        "Implemented Dead Reckoning in ArduPilot (Lua/C++) for GPS-denied flight using barometer and IMU. Built swarm architecture and mesh networking for multi-UAV coordination.",
+      tech: "C++, Lua, ArduPilot, PX4, ROS2, UAV Swarm Systems",
     },
     {
-      title: "Autonomous Landing Pad Detection",
-      org: "AeroClub Project",
-      year: "2024",
+      title: "Thermal–Visual SLAM System",
+      org: "IIT Delhi × Prof. Chetan Arora",
+      year: "2024–25",
       description:
-        "Implemented computer vision-based precision landing system with thermal + RGB fusion for moving platforms.",
-      tech: "OpenCV, TensorFlow, ROS, Jetson Nano",
+        "Advanced SLAM using ORB-SLAM3 and DROID-SLAM for multi-spectral perception with thermal and RGB fusion, enabling autonomous drone and robotic navigation.",
+      tech: "ROS, PyTorch, OpenCV, DROID-SLAM, ORB-SLAM3",
     },
     {
-      title: "Drone Fleet Coordination System",
-      org: "IITD Lab Simulation",
+      title: "Automated Medical Imaging Server",
+      org: "AIIMS × IIT Delhi",
       year: "2024",
       description:
-        "Built decentralized multi-drone path planning algorithms for coordinated area surveillance missions.",
-      tech: "Python, ROS2, PX4, Swarm AI",
+        "Deployed Jetson-based PACS server automation pipeline for DICOM data transfer with encryption, indexing, and anonymization for medical AI applications.",
+      tech: "Python, MySQL, Pydicom, Jetson, Flask",
+    },
+    {
+      title: "Operation Recovery Optimization – Indigo Airlines",
+      org: "B.Tech Project (IIT Delhi)",
+      year: "2025",
+      description:
+        "Modeling large-scale airline disruption recovery using stage-wise Temporal Networks and discrete optimization, targeting 3–5% cost reduction in crew scheduling.",
+      tech: "Python, OR-Tools, Dynamic Programming, FLPO",
     },
   ];
 
@@ -141,18 +146,24 @@ export default function HomePage() {
       >
         <div>
           <h1 className="text-5xl font-bold mb-6">
-            Engineer | Drone Architect | AI Enthusiast Leader
+            Robotics Engineer | AI Researcher | UAV Systems Developer
           </h1>
           <p className="text-lg text-gray-300 mb-8">
-            Hi, I’m Aman Sheoran, a B Tech student at IIT Delhi, driven to merge
-            aerospace systems with AI and real-world problem-solving. I lead
-            drones to fly, both in labs and in competitions.
+            I’m <span className="text-blue-400 font-semibold">Aman Sheoran</span>, 
+            a B.Tech student in Production & Industrial Engineering at IIT Delhi (2022–26).
+            My work bridges <b>Robotics, AI, and Aerial Systems</b>, focusing on
+            autonomous drones, perception, and decision-making for real-world deployment.
           </p>
           <div className="flex gap-4">
             <button className="bg-blue-500 px-6 py-3 rounded-lg text-white">
-              Explore My Projects
+              View My Projects
             </button>
-            <button className="border border-blue-400 text-blue-400 px-6 py-3 rounded-lg">
+            <button
+              onClick={() =>
+                window.open("/Aman Sheoran CV.pdf", "_blank")
+              }
+              className="border border-blue-400 text-blue-400 px-6 py-3 rounded-lg"
+            >
               Download CV
             </button>
           </div>
@@ -178,38 +189,46 @@ export default function HomePage() {
         >
           About Me
         </motion.h2>
-
-        <div className="max-w-4xl text-center">
-          <p className="text-gray-300 mb-6">
-            I am a passionate engineer from IIT Delhi, blending my skills in
-            machine learning, robotics, and aerospace engineering to develop
-            cutting-edge autonomous systems. My leadership experience in
-            AeroClub, Hockey Team, and Alumni Association reflects my dedication
-            to both technical growth and team-building.
+        <div className="max-w-4xl text-center text-gray-300 leading-relaxed">
+          <p className="mb-6">
+            I’m an engineer passionate about creating intelligent, resilient, and
+            autonomous systems. My research interests span{" "}
+            <b>robotics, computer vision, control systems, and embedded AI</b>.
+            Through my work at IIT Delhi and internships at <b>BotLab Dynamics</b> 
+            and research labs, I’ve developed advanced algorithms in swarm robotics,
+            SLAM, and autonomous navigation.
           </p>
-          <p className="text-gray-300 mb-6">
-            My vision is to solve real-world challenges by fusing robotics, AI,
-            and computer vision with hands-on engineering to create intelligent
-            systems capable of operating in dynamic environments.
+          <p className="mb-6">
+            As <b>President of the Aeromodelling Club</b>, I’ve led a 40+ member team, 
+            initiated MOUs with aviation startups, organized national workshops,
+            and represented IIT Delhi at TechInter IIT. I also serve as 
+            <b> Captain of the Girnar Hockey Team</b>, balancing academics, research, and leadership.
+          </p>
+          <p>
+            My goal is to contribute to next-gen aerial robotics — combining
+            <b> AI, autonomy, and systems design</b> to solve real-world challenges.
           </p>
         </div>
 
-        {/* Image Carousel */}
         <div
           ref={aboutImageRef}
           className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-none select-none"
         >
           <div className="inline-flex gap-6">
             {[
-              { src: "/photo1.png", alt: "Drone Meeting" },
-              { src: "/photo2.png", alt: "Drone Workshop" },
-              { src: "/photo3.png", alt: "Drone Team" },
-              { src: "/photo4.png", alt: "Drone Design" },
-              { src: "/photo1.png", alt: "Drone Meeting" },
-              { src: "/photo2.png", alt: "Drone Workshop" },
-              { src: "/photo3.png", alt: "Drone Team" },
-              { src: "/photo4.png", alt: "Drone Design" },
-            ].map((img, index) => (
+              { src: "/photo1.png", alt: "Drone Operations" },
+              { src: "/photo2.png", alt: "Research Lab" },
+              { src: "/photo3.png", alt: "Flight Testing" },
+              { src: "/photo4.png", alt: "Team at IITD" },
+              { src: "/photo1.png", alt: "Drone Operations" },
+              { src: "/photo2.png", alt: "Research Lab" },
+              { src: "/photo3.png", alt: "Flight Testing" },
+              { src: "/photo4.png", alt: "Team at IITD" },
+              { src: "/photo1.png", alt: "Drone Operations" },
+              { src: "/photo2.png", alt: "Research Lab" },
+              { src: "/photo3.png", alt: "Flight Testing" },
+              { src: "/photo4.png", alt: "Team at IITD" },
+              ].map((img, index) => (
               <img
                 key={index}
                 src={img.src}
@@ -217,7 +236,6 @@ export default function HomePage() {
                 loading="lazy"
                 draggable="false"
                 className="w-72 h-48 rounded-xl object-cover inline-block hover:scale-105 transition-transform duration-300"
-                onError={(e) => (e.currentTarget.style.display = "none")}
               />
             ))}
           </div>
@@ -229,20 +247,15 @@ export default function HomePage() {
         id="projects"
         className="min-h-screen snap-start px-8 py-32 max-w-7xl mx-auto"
       >
-        <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center">Highlighted Projects</h2>
         <div
           ref={projectsRef}
           className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-none"
         >
           <div className="inline-flex gap-6">
-            {[...Array(3)].flatMap(() =>
-              projects.map((project, index) => (
-                <HoverProjectCard
-                  key={`${index}-${Math.random()}`}
-                  {...project}
-                />
-              ))
-            )}
+            {projects.map((project, index) => (
+              <HoverProjectCard key={index} {...project} />
+            ))}
           </div>
         </div>
       </section>
@@ -262,7 +275,7 @@ function HoverProjectCard({ title, org, year, description, tech }) {
       </p>
       <div className="absolute inset-0 bg-[#1e2c3c] opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 rounded-xl z-40">
         <p className="text-gray-300 mb-4 text-sm">{description}</p>
-        <p className="text-sm text-blue-400">Topics: {tech}</p>
+        <p className="text-sm text-blue-400">Tech: {tech}</p>
       </div>
     </div>
   );
