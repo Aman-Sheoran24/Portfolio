@@ -30,12 +30,12 @@
   >
     <div className="inline-flex gap-6">
       {[
-        { src: "/photo1.jpg", alt: "Aman 1" },
+        { src: "/photo1.png", alt: "Aman 1" },
         { src: "/photo2.png", alt: "Aman 2" },
         { src: "/photo3.png", alt: "Aman 3" },
         { src: "/photo4.png", alt: "Aman 4" },
         // repeated once more for smooth looping
-        { src: "/photo1.jpg", alt: "Aman 1" },
+        { src: "/photo1.png", alt: "Aman 1" },
         { src: "/photo2.png", alt: "Aman 2" },
         { src: "/photo3.png", alt: "Aman 3" },
         { src: "/photo4.png", alt: "Aman 4" },
