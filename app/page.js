@@ -177,7 +177,7 @@ export default function HomePage() {
       }}
     >
       <img
-        src="/future-vision.jpg"
+        src="profile_image.png"
         alt="Futuristic Drone Systems"
         className="rounded-2xl object-cover w-[480px] h-[320px] border border-white/10"
       />
