@@ -140,43 +140,55 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section
-        id="hero"
-        className="min-h-screen snap-start grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-8 py-32 max-w-7xl mx-auto"
+<section
+  id="hero"
+  className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-8 py-24 bg-gradient-to-br from-[#0b1424] via-[#0e1b2a] to-black text-white overflow-hidden"
+>
+  {/* Text Section */}
+  <div className="max-w-xl z-20">
+    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+      Redefining the Future of <span className="text-blue-400">Aerial AI</span>
+    </h1>
+    <p className="text-gray-400 text-lg mb-10 leading-relaxed">
+      Building resilient, intelligent, and autonomous systems. From UAV swarms to AI-driven perception,
+      I design the future of autonomous robotics powered by vision, learning, and flight.
+    </p>
+
+    <div className="flex gap-4">
+      <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition">
+        Explore My Work
+      </button>
+      <button
+        onClick={() => window.open('/Aman Sheoran CV.pdf', '_blank')}
+        className="border border-blue-400 text-blue-400 hover:bg-blue-400/10 px-6 py-3 rounded-lg transition"
       >
-        <div>
-          <h1 className="text-5xl font-bold mb-6">
-            Robotics Engineer | AI Researcher | UAV Systems Developer
-          </h1>
-          <p className="text-lg text-gray-300 mb-8">
-            I’m <span className="text-blue-400 font-semibold">Aman Sheoran</span>, 
-            a B.Tech student in Production & Industrial Engineering at IIT Delhi (2022–26).
-            My work bridges <b>Robotics, AI, and Aerial Systems</b>, focusing on
-            autonomous drones, perception, and decision-making for real-world deployment.
-          </p>
-          <div className="flex gap-4">
-            <button className="bg-blue-500 px-6 py-3 rounded-lg text-white">
-              View My Projects
-            </button>
-            <button
-              onClick={() =>
-                window.open("/Aman Sheoran CV.pdf", "_blank")
-              }
-              className="border border-blue-400 text-blue-400 px-6 py-3 rounded-lg"
-            >
-              Download CV
-            </button>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <img
-            src="/profile_image.png"
-            alt="Aman Sheoran"
-            className="rounded-2xl object-cover w-full max-w-md"
-            draggable="false"
-          />
-        </div>
-      </section>
+        Download CV
+      </button>
+    </div>
+  </div>
+
+  {/* Floating 3D Image */}
+  <div className="relative mt-12 md:mt-0 md:ml-12 perspective-1000">
+    <div
+      className="transform rotate-y-[-12deg] rotate-x-[4deg] shadow-2xl hover:rotate-y-[-8deg] transition-transform duration-700 ease-out"
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: "1000px",
+      }}
+    >
+      <img
+        src="/future-vision.jpg"
+        alt="Futuristic Drone Systems"
+        className="rounded-2xl object-cover w-[480px] h-[320px] border border-white/10"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
+    </div>
+  </div>
+
+  {/* Glow effect */}
+  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent blur-3xl -z-10" />
+</section>
+
 
       {/* About Section */}
       <section
