@@ -204,7 +204,7 @@ export default function HomePage() {
 
         <div
           ref={aboutImageRef}
-          className="w-full overflow-x-auto whitespace-nowrap py-4 select-none"
+          className="w-full overflow-hidden whitespace-nowrap py-4 select-none"
         >
           <div className="inline-flex gap-6">
             {Array.from({ length: 12 }).map((_, i) => (
@@ -220,7 +220,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= PROJECTS (UNCHANGED) ================= */}
+      {/* ================= PROJECTS  ================= */}
       <section id="projects" className="py-24 overflow-hidden">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold inline-block px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary">
