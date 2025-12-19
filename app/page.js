@@ -237,26 +237,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="min-h-screen snap-start px-8 py-32 max-w-7xl mx-auto"
-      >
-        <h2 className="text-4xl font-bold mb-12 text-center">Highlighted Projects</h2>
-        <div
-          ref={projectsRef}
-          className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-none"
-        >
-          <div className="inline-flex gap-6">
-            {projects.map((project, index) => (
-              <HoverProjectCard key={index} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
+     <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
+  <div className="text-center mb-16">
+    <h2 className="text-3xl md:text-4xl font-semibold inline-block px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary">
+      Featured Projects
+    </h2>
+    <p className="mt-4 text-muted">
+      Autonomous systems, AI platforms, and real-world deployments
+    </p>
+  </div>
+
+  <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    {/* CARD 01 */}
+    <div className="project-card p-8">
+      <span className="absolute top-6 right-6 text-5xl font-bold opacity-10">
+        01
+      </span>
+
+      <div className="w-14 h-14 mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-neon">
+        🚁
+      </div>
+
+      <h3 className="text-xl font-semibold mb-3">
+        UAV Swarm & Dead Reckoning
+      </h3>
+
+      <p className="text-sm text-muted mb-6">
+        Multi-drone leader–follower architecture with GPS-denied navigation
+        using IMU + barometer in ArduPilot.
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        {["ArduPilot", "Lua", "Swarm", "IMU"].map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
-  );
-}
+
+    {/* CARD 02 */}
+    <div className="project-card p-8">
+      <span className="absolute top-6 right-6 text-5xl font-bold opacity-10">
+        02
+      </span>
+
+      <div className="w-14 h-14 mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-neon">
+        🛰️
+      </div>
+
+      <h3 className="text-xl font-semibold mb-3">
+        NIDAR – Disaster UAV
+      </h3>
+
+      <p className="text-sm text-muted mb-6">
+        Autonomous UAV with LoRa mesh networking and Jetson-powered real-time
+        computer vision.
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        {["YOLOv7", "Jetson", "LoRa", "ROS"].map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* CARD 03 */}
+    <div className="project-card p-8">
+      <span className="absolute top-6 right-6 text-5xl font-bold opacity-10">
+        03
+      </span>
+
+      <div className="w-14 h-14 mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-neon">
+        🧠
+      </div>
+
+      <h3 className="text-xl font-semibold mb-3">
+        Thermal–Visual SLAM
+      </h3>
+
+      <p className="text-sm text-muted mb-6">
+        Evaluated ORB-SLAM3, DROID-SLAM, and DPVO on RGB + thermal imagery for
+        low-texture navigation.
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        {["SLAM", "Computer Vision", "ROS"].map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
 function HoverProjectCard({ title, org, year, description, tech }) {
   return (
