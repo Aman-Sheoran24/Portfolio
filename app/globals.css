@@ -2,10 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
+/* ================= ROOT THEME ================= */
+:root {
+  --bg-main: #0a0c18;
+  --bg-card: #12142a;
+
+  --primary: #be4bff;
+  --secondary: #ff63c3;
+  --accent: #00ced1;
+
+  --text-main: #f8fafc;
+  --text-muted: #b0b0c0;
+
+  --border-glow: rgba(190, 75, 255, 0.35);
 }
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+/* ================= BASE ================= */
+html,
+body {
+  background: radial-gradient(
+      circle at top,
+      rgba(190, 75, 255, 0.15),
+      transparent 45%
+    ),
+    var(--bg-main);
+  color: var(--text-main);
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= PROJECT CARD ================= */
+.project-card {
+  position: relative;
+  background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0)
+      ),
+      var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(190, 75, 255, 0.25),
+    rgba(255, 99, 195, 0.25)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 45px rgba(190, 75, 255, 0.45);
+  border-color: var(--border-glow);
+}
+
+/* ================= TEXT HELPERS ================= */
+.text-muted {
+  color: var(--text-muted);
 }
