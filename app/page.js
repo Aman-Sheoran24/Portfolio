@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 export default function HomePage() {
   const aboutTrackRef = useRef(null);
   const projectsTrackRef = useRef(null);
-  const [activeSection, setActiveSection] = useState("Home");
+  const [activeSection, setActiveSection] = useState("hero");
 
   /* ================= SCROLL SPY ================= */
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["Home", "about", "projects"];
-      let current = "Home";
+      const sections = ["hero", "about", "projects"];
+      let current = "hero";
 
       sections.forEach((id) => {
         const el = document.getElementById(id);
@@ -115,9 +115,9 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* ================= Home ================= */}
+      {/* ================= HERO ================= */}
       <section
-        id="Home"
+        id="hero"
         className="min-h-screen grid md:grid-cols-2 items-center px-8 pt-32 max-w-7xl mx-auto"
       >
         <h1 className="text-5xl font-bold">
